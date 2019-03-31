@@ -19,7 +19,7 @@ namespace TheKings.Tests
         {
             // Arrange
             StringBuilder logOutput = new StringBuilder();
-            Program.logFunc = i => logOutput.AppendLine(i);
+            Program.LogFunc = i => logOutput.AppendLine(i);
 
             // Act
             string question = "How old are you?";

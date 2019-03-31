@@ -28,7 +28,7 @@ namespace TheKings
             return Kings
                 .GroupBy(k => k.Ruled.TotalYears)
                 .OrderByDescending(g => g.Key)
-                .FirstOrDefault()
+                .FirstOrDefault()?
                 .Select(g => g)
                 .OrderBy(k => k.Name);
         }
@@ -43,7 +43,7 @@ namespace TheKings
                 .Select(g => new House { Name = g.Key, Kings = g.ToList() })
                 .GroupBy(h => h.YearsRuled)
                 .OrderByDescending(g => g.Key)
-                .FirstOrDefault()
+                .FirstOrDefault()?
                 .Select(h => h)
                 .OrderBy(h => h.Name);
         }
@@ -58,7 +58,7 @@ namespace TheKings
                 .Select(g => new { Name = g.Key, Count = g.Count() })
                 .GroupBy(s => s.Count)
                 .OrderByDescending(g => g.Key)
-                .FirstOrDefault()
+                .FirstOrDefault()?
                 .Select(n => n.Name);
         }
     }

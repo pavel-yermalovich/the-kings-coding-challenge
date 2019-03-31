@@ -7,11 +7,9 @@ namespace TheKings
     {
         public string Name { get; set; }
 
-        public IList<King> Kings { get;set; }
+        public IList<King> Kings { get; set; }
 
-        public int YearsRuled => 
+        public int YearsRuled =>
             Kings.Max(k => k.Ruled.End) - Kings.Min(k => k.Ruled.Start);
-
-        
     }
 }
